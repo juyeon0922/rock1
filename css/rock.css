@@ -1,0 +1,125 @@
+@charset 'utf-8';
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+html,body{
+    font-family: 'Diphylleia', serif;
+}
+img{
+    max-width:100%;
+    display:block; 
+}
+a{
+    text-decoration: none;
+    color:#000;
+    font-weight:bold;
+}
+a:hover{
+    text-decoration:underline;
+    color:skyblue;
+}
+/* 헤더 */
+header{
+    background:#f1f1f1;
+    text-align:center;
+    padding:10px 0 20px;
+}
+header h1{
+    animation:down 2s 0s both;
+}
+@keyframes down{
+    0%{transform:translateY(-100px);}
+    95%{transform:translateY(20px);}
+    100%{transform:translateY(0px);}
+}
+header+div{
+    border:0px solid #000;
+}
+/* 메뉴 */
+nav{
+    border:0px solid blue;
+    padding:10px 0;
+}
+nav ul{
+    list-style-position: inside;  
+}
+nav li{
+    padding:10px 20px 10px;
+    border-bottom:1px solid #ddd;
+    transition:0.5s;
+
+}
+nav li::marker{
+    color:red;
+    position:absolute;
+}
+nav li:hover{
+    padding-left:40px;
+}
+/* 메뉴+메인 */
+nav+div{
+    border:0px solid blue;
+}
+/* 메인 */
+main{
+    border:0px solid blue;
+    margin-top:20px;
+    padding:10px;
+    overflow:hidden;
+}
+main h2{
+    margin-bottom:10px;
+    border:0px solid blue;
+}
+main p{
+    line-height:170%;
+}
+main img{
+    margin:20px 0;
+    transition:0.5s;
+}
+main img:hover {
+    border-radius:100px;
+    filter:sepia(100%);
+    box-shadow: 0 0 10px #000;
+}
+
+main p:nth-of-type(1) {animation:sss 2s 0s both}
+main p:nth-of-type(2) {animation:sss 2s 1s both}
+main p:nth-of-type(3) {animation:sss 2s 2s both}
+
+@keyframes sss{
+    from{transform: translateX(-100vw);}
+    to{transform: translateX(0);}
+}
+/* 어사이드 */
+aside{
+    background:lightblue;
+    padding:15px;
+}
+aside h2:not(:first-of-type){
+    margin-top:10px;
+}
+/* 푸터 */
+footer{
+    background:#f1f1f1;
+    padding:10px;
+    text-align:center;
+}
+/* 아이패드 미니 */
+@media(min-width:768px){
+    header+div{display:flex;}
+    nav{flex:1;}
+    nav+div{flex:3;}
+}
+/* 아이패드프로이상넓이 */
+@media(min-width:1024px){
+    header+div{max-width:1300px; margin:auto;}
+    nav+div{display:flex;}
+    main{flex:3;}
+    aside{flex:1.2;}
+    nav{flex:0.7;}
+}
